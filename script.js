@@ -1,0 +1,2 @@
+   // Placeholder - Claude Code wypełni
+
