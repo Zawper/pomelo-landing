@@ -77,15 +77,6 @@ ul { list-style: none; }
   width: auto;
 }
 
-.logo-text {
-  font-size: 22px;
-  font-weight: 700;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 .nav-menu {
   display: flex;
   gap: 40px;
@@ -836,15 +827,6 @@ ul { list-style: none; }
 }
 
 .footer-logo-img { height: 35px; }
-
-.footer-logo-text {
-  font-size: 20px;
-  font-weight: 700;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
 
 .footer-tagline {
   font-size: 14px;
