@@ -73,8 +73,9 @@ ul { list-style: none; }
 .logo-container:hover { transform: scale(1.02); }
 
 .logo-img {
-  height: 40px;
+  height: 48px;
   width: auto;
+  object-fit: contain;
 }
 
 .nav-menu {
@@ -1471,6 +1472,10 @@ ul { list-style: none; }
 @media (max-width: 768px) {
   .container { padding: 0 20px; }
 
+  .logo-img {
+    height: 40px;
+  }
+}
   /* Hero */
   .hero {
     min-height: auto;
