@@ -266,6 +266,17 @@ ul { list-style: none; }
   margin-left: auto;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
 }
 
 .hero-watermark {
@@ -467,6 +478,55 @@ ul { list-style: none; }
   margin-top: 24px;
   padding: 14px 28px;
   font-size: 15px;
+}
+
+/* Report price in report cards */
+.report-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--magenta);
+  margin-top: 16px;
+}
+
+.report-card {
+  justify-content: flex-start;
+}
+
+.report-card p {
+  flex-grow: 0;
+}
+
+/* Button group for dual buttons */
+.button-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.button-group-vip {
+  justify-content: center;
+}
+
+/* Secondary button (outline style) */
+.btn-secondary {
+  display: inline-block;
+  padding: 16px 32px;
+  border: 2px solid var(--purple);
+  border-radius: 50px;
+  color: var(--purple);
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: transparent;
+  text-align: center;
+}
+
+.btn-secondary:hover {
+  background: var(--purple);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(139, 58, 158, 0.3);
 }
 
 /* Tools section uses about styles but with different background */
@@ -1274,4 +1334,26 @@ ul { list-style: none; }
   .hero-buttons { flex-direction: column; align-items: center; }
   .btn-outline-white { width: 100%; text-align: center; }
   .btn-primary.large { width: 100%; }
+
+  /* Button groups - stack on mobile */
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .button-group .btn-secondary,
+  .button-group .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Report cards */
+  .report-price {
+    font-size: 24px;
+  }
+
+  /* Placeholder text */
+  .placeholder-text {
+    font-size: 12px;
+  }
 }
