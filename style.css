@@ -438,7 +438,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--light-bg);
+  background: var(--white);
   overflow: hidden;
   transition: transform 0.3s ease;
 }
