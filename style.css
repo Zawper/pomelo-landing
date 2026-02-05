@@ -1012,7 +1012,7 @@ ul { list-style: none; }
 
 /* Website Box */
 .website-box {
-  background: linear-gradient(135deg, rgba(139, 58, 158, 0.1), rgba(233, 30, 140, 0.1));
+  background: var(--light-bg);
   border: 2px solid rgba(139, 58, 158, 0.2);
   border-radius: 20px;
   padding: 30px 40px;
