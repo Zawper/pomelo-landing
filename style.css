@@ -1092,7 +1092,23 @@ ul { list-style: none; }
   color: white;
   margin-bottom: 8px;
 }
+.vip-icon {
+  width: 60px;   /* mniejszy okrąg */
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
 
+.vip-icon img {
+  width: 40px;   /* Twoja ikona */
+  height: 40px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
 .vip-tagline {
   font-size: 22px;
   font-weight: 600;
