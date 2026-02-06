@@ -1053,7 +1053,7 @@ ul { list-style: none; }
 /* VIP */
 .package-vip {
   background: linear-gradient(135deg, var(--purple), var(--magenta));
-  padding: 60px 50px;
+  padding: 40px 50px;
   border-radius: 30px;
   position: relative;
   margin-top: 0;
@@ -1090,7 +1090,7 @@ ul { list-style: none; }
 .vip-content h3 {
   font-size: 42px;
   color: white;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 
 .vip-tagline {
@@ -1102,15 +1102,15 @@ ul { list-style: none; }
 
 .vip-description {
   font-size: 17px;
-  line-height: 1.7;
-  margin-bottom: 32px;
+  line-height: 1.5;
+  margin-bottom: 24px;
   opacity: 0.95;
 }
 
 .vip-list {
   list-style: none;
   padding: 0;
-  margin: 0 auto 40px;
+  margin: 0 auto 30px;
   text-align: left;
   max-width: 600px;
 }
