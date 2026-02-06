@@ -1053,7 +1053,7 @@ ul { list-style: none; }
 /* VIP */
 .package-vip {
   background: linear-gradient(135deg, var(--purple), var(--magenta));
-  padding: 40px 50px;
+  padding: 25px 50px;
   border-radius: 30px;
   position: relative;
   margin-top: 0;
