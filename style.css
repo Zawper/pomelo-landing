@@ -1012,7 +1012,7 @@ ul { list-style: none; }
 
 /* Website Box */
 .website-box {
-  background: linear-gradient(135deg, rgba(139, 58, 158, 0.1), rgba(233, 30, 140, 0.1));
+  background: var(--light-bg);
   border: 2px solid rgba(139, 58, 158, 0.2);
   border-radius: 20px;
   padding: 30px 40px;
@@ -1053,7 +1053,7 @@ ul { list-style: none; }
 /* VIP */
 .package-vip {
   background: linear-gradient(135deg, var(--purple), var(--magenta));
-  padding: 60px 50px;
+  padding: 25px 50px;
   border-radius: 30px;
   position: relative;
   margin-top: 0;
@@ -1090,7 +1090,23 @@ ul { list-style: none; }
 .vip-content h3 {
   font-size: 42px;
   color: white;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+}
+.vip-icon {
+  width: 60px;   /* mniejszy okrąg */
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+.vip-icon img {
+  width: 40px;   /* Twoja ikona */
+  height: 40px;
+  object-fit: contain;
 }
 
 .vip-tagline {
@@ -1102,15 +1118,15 @@ ul { list-style: none; }
 
 .vip-description {
   font-size: 17px;
-  line-height: 1.7;
-  margin-bottom: 32px;
+  line-height: 1.5;
+  margin-bottom: 24px;
   opacity: 0.95;
 }
 
 .vip-list {
   list-style: none;
   padding: 0;
-  margin: 0 auto 40px;
+  margin: 0 auto 30px;
   text-align: left;
   max-width: 600px;
 }
@@ -1256,7 +1272,7 @@ ul { list-style: none; }
 /* ==================== SOCIAL PROOF ==================== */
 
 .social-proof {
-  padding: 80px 0 40px;
+  padding: 80px 0 10px;
   background: var(--light-bg);
   position: relative;
   overflow: hidden;
@@ -1337,20 +1353,6 @@ ul { list-style: none; }
   overflow: hidden;
 }
 
-.certificates::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%238B3A9E' fill-opacity='0.04' d='M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,197.3C672,192,768,160,864,165.3C960,171,1056,213,1152,218.7C1248,224,1344,192,1392,176L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z'%3E%3C/path%3E%3C/svg%3E") no-repeat top;
-  background-size: 100% auto;
-  pointer-events: none;
-  z-index: 0;
-}
-
 .certificates .container {
   position: relative;
   z-index: 1;
@@ -1370,7 +1372,7 @@ ul { list-style: none; }
   border: 2px solid rgba(139, 58, 158, 0.1);
   border-radius: 16px;
   padding: 16px 24px;
-  height: 130px;
+  height: 110px;
   transition: all 0.3s ease;
   cursor: pointer;
 }
