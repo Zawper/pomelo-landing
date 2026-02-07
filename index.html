@@ -5,25 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>POMELO – Marketing & Automatyzacja | Berlin E-commerce Expo 2026</title>
   <meta name="description" content="POMELO Marketing and Soft - SEO, Social Media, AI Automation. Automatyzujemy procesy, zwiększamy widoczność, skalujemy sprzedaż. Spotkaj nas na Berlin E-commerce Expo 2026!">
+  <link rel="icon" type="image/png" href="images/pomelo-plama.png">
+  <link rel="apple-touch-icon" href="images/pomelo-plama.png">
+  <meta name="theme-color" content="#8B3A9E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- Favicon / Icons -->
-<link rel="icon" type="image/png" href="images/pomelo-plama.png">
-<link rel="apple-touch-icon" href="images/pomelo-plama.png">
-<meta name="theme-color" content="#8B3A9E">
-
 </head>
 <body>
 
   <!-- NAVIGATION -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#" class="logo-container">
+      <a href="#" class="logo-link">
         <img src="images/logo.png" alt="POMELO Logo" class="logo-img">
       </a>
-
       <div class="nav-menu" id="navMenu">
         <a href="#o-nas" class="nav-link">O nas</a>
         <a href="#narzedzia" class="nav-link">Narzędzia</a>
@@ -31,461 +28,431 @@
         <a href="#oferta" class="nav-link">Oferta</a>
         <a href="#kontakt" class="nav-link">Kontakt</a>
       </div>
-
-      <div class="nav-right">
-        <a href="#kontakt" class="nav-cta">Umów konsultację</a>
-        <div class="language-switcher">
+      <div class="nav-actions">
+        <a href="#kontakt" class="btn-cta nav-cta">Umów konsultację</a>
+        <div class="lang-switcher">
           <a href="#" class="lang-btn active" data-lang="pl">PL</a>
           <a href="#" class="lang-btn" data-lang="de">DE</a>
           <a href="#" class="lang-btn" data-lang="en">EN</a>
         </div>
       </div>
-
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
+      <button class="hamburger" id="hamburger" aria-label="Otwórz menu">
+        <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero" id="hero">
-    <div class="hero-container">
-      <div class="hero-content">
+    <div class="hero-inner">
+      <div class="hero-text">
         <h1>Budujemy marketing,<br>który daje wolność</h1>
         <p class="hero-subtitle">Automatyzujemy procesy</p>
         <p class="hero-subtitle">Zwiększamy widoczność</p>
         <p class="hero-subtitle">Skalujemy sprzedaż</p>
-        <p class="hero-description">Żyjemy tym, co robimy. Testujemy każdą technikę na własnej skórze, zanim zaproponujemy ją Tobie.</p>
-        <div class="hero-buttons">
-          <a href="#oferta" class="btn-outline-white">Zobacz ofertę</a>
-          <a href="#kontakt" class="btn-outline-white secondary">Umów konsultację</a>
+        <p class="hero-desc">Żyjemy tym, co robimy. Testujemy każdą technikę na własnej skórze, zanim zaproponujemy ją Tobie.</p>
+        <div class="hero-btns">
+          <a href="#oferta" class="btn btn-outline-light">Zobacz ofertę</a>
+          <a href="#kontakt" class="btn btn-outline-light btn-glass">Umów konsultację</a>
         </div>
       </div>
-      <div class="hero-image">
-        <div class="hero-image-placeholder">
-          <span class="placeholder-text">Tu wkrótce będzie nasze zdjęcie</span>
+      <div class="hero-visual">
+        <div class="hero-placeholder">
+          <span>Tu wkrótce będzie nasze zdjęcie</span>
         </div>
       </div>
     </div>
-    <div class="hero-watermark">POMELO</div>
+    <div class="hero-watermark" aria-hidden="true">POMELO</div>
   </section>
 
   <!-- O NAS -->
-  <section class="about fade-in" id="o-nas">
+  <section class="section section--white" id="o-nas">
     <div class="container">
-      <h2 class="section-title">Nie jesteśmy kolejną agencją</h2>
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="about-icon">
-            <!-- Możesz wstawić zdjęcie: <img src="images/kacper.jpg" alt="Kacper"> -->
-            <!-- span class="about-icon-emoji">✍️</span> -->
+      <h2 class="section-title fade-in">Nie jesteśmy kolejną agencją</h2>
+      <div class="grid grid--3 fade-in">
+        <article class="card">
+          <div class="card-icon">
             <img src="images/kacper.png" alt="Kacper">
           </div>
           <h3>Kacper</h3>
           <h4>AI &amp; Technical Growth</h4>
           <p>Przepaliłem setki godzin ucząc się i szkoląc, jak "okiełznać" AI i sprawić, żeby Google wyrzucało strony na pierwsze miejsca. Kocham moment, kiedy automatyzacja, którą zbudowałem, robi swoje. Wtedy czuję dotyk doskonałości.</p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">
-            <!-- span class="about-icon-emoji">✍️</span> -->
+        </article>
+        <article class="card">
+          <div class="card-icon">
             <img src="images/agata.png" alt="Agata">
           </div>
           <h3>Agata</h3>
           <h4>Content &amp; Storytelling</h4>
           <p>Odkryłam, że mam dar do tworzenia treści, które ludzie naprawdę chcą czytać. Nie sprzedajnego "kup teraz", ale historii, które budują więź i autorytet. Projektuję idealne kampanie, które zamieniają obcych w fanów marki.</p>
-        </div>
-        <div class="about-card">
-          <div class="about-icon">
-            <!-- span class="about-icon-emoji">🍊</span> -->
-            <img src="images/pomelo-plama.png" alt="Pomelo logo plama">
+        </article>
+        <article class="card">
+          <div class="card-icon">
+            <img src="images/pomelo-plama.png" alt="Pomelo logo">
           </div>
           <h3>POMELO</h3>
           <h4>Marketing z wolnością</h4>
           <p>Połączyliśmy siły i powstało POMELO. Nie jesteśmy agencją z biurowcem i 50-osobowym zespołem. Jesteśmy dwójką ludzi, małżeństwem, którzy żyją tym, co robią. Budujemy marketing, który może działać na autopilocie pod nadzorem specjalistów, żebyś mógł skupić się na tym, co ważne.</p>
-        </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- NARZĘDZIA -->
-  <section class="about tools-section fade-in" id="narzedzia">
+  <!-- NARZEDZIA -->
+  <section class="section section--light" id="narzedzia">
     <div class="container">
-      <h2 class="section-title">Darmowe narzędzia dla Twojego biznesu!</h2>
-      <p class="section-subtitle">Zanim zaczniemy wspólnie pracować, sprawdź proszę za darmo i bez zobowiązań swoją witrynę/sklep!</p>
-      <p class="section-subtitle">Dokonaj profesjonalnej analizy aby uzyskać raport swoich działań w sieci!</p>
-     
-      <div class="about-grid">
-        <div class="about-card">
-          <div class="about-icon">
-            <!-- Możesz wstawić zdjęcie: <img src="images/seo-tool.jpg" alt="SEO"> -->
-            <!-- span class="about-icon-emoji">SEO</span> -->
-            <img src="images/audit-seo-geo.png" alt="Mini audyt Seo Geo">
+      <h2 class="section-title fade-in">Darmowe narzędzia dla Twojego biznesu!</h2>
+      <p class="section-sub fade-in">Zanim zaczniemy wspólnie pracować, sprawdź proszę za darmo i bez zobowiązań swoją witrynę/sklep!</p>
+      <p class="section-sub fade-in">Dokonaj profesjonalnej analizy aby uzyskać raport swoich działań w sieci!</p>
+      <div class="grid grid--3 fade-in">
+        <article class="card">
+          <div class="card-icon">
+            <img src="images/audit-seo-geo.png" alt="Mini audyt SEO GEO">
           </div>
           <h3>Mini Audyt SEO/GEO</h3>
           <h4>Sprawdź widoczność</h4>
           <p>Sprawdź widoczność swojej strony internetowej w sieci! Czy Twoja witryna jest wyświetlana w ChatGPT oraz Gemini? Otrzymasz szczegółowy raport z konkretnymi wskazówkami!</p>
-          <a href="#kontakt" class="btn-primary btn-card">Sprawdź za darmo</a>
-        </div>
-        <div class="tool-card-wrapper">
-          <div class="coming-soon-badge">W BUDOWIE</div>
-          <div class="about-card blurred-card">
-            <div class="about-icon">
+          <a href="#kontakt" class="btn btn-primary btn-sm">Sprawdź za darmo</a>
+        </article>
+        <div class="card-wrapper card-wrapper--coming-soon">
+          <span class="badge badge--coming-soon">W BUDOWIE</span>
+          <article class="card card--blurred">
+            <div class="card-icon">
               <img src="images/kalkulator.png" alt="Kalkulator Social Media">
             </div>
             <h3>Kalkulator potencjału Social Media</h3>
             <h4>Oblicz zyski</h4>
             <p>Sprawdź, ile Twoja firma może zyskać na widoczności w sieci. Zobacz ile tracisz nie mając profesjonalnych social media. Interaktywny kalkulator pokaże Ci w liczbach co możesz zyskać!</p>
-            <a href="#kontakt" class="btn-primary btn-card">Oblicz za darmo</a>
-          </div>
+            <a href="#kontakt" class="btn btn-primary btn-sm">Oblicz za darmo</a>
+          </article>
         </div>
-        <div class="about-card">
-          <div class="about-icon">
-            <!-- Możesz wstawić zdjęcie: <img src="images/ai-tool.jpg" alt="AI"> -->
-            <!-- span class="about-icon-emoji">AI</span> -->
+        <article class="card">
+          <div class="card-icon">
             <img src="images/ai-audit.png" alt="Test automatyzacji">
           </div>
           <h3>Test Automatyzacji</h3>
           <h4>Sprawdź gotowość</h4>
           <p>Zobacz za pomocą prostej ankiety czy Twoja firma nadaje się do automatyzacji. Otrzymasz mapę procesów, możliwości automatyzacji procesów oraz plan wdrożenia.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdy4ApfeOd3QIUa8KPA7XYD6BLK135q-_8g3m1a7S7gDvRPpw/viewform?usp=publish-editor" 
-   class="btn-primary btn-card" 
-   target="_blank" 
-   rel="noopener noreferrer">Darmowy test</a>
-        </div>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSdy4ApfeOd3QIUa8KPA7XYD6BLK135q-_8g3m1a7S7gDvRPpw/viewform?usp=publish-editor" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Darmowy test</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- JAK TO DZIAŁA -->
-  <section class="process fade-in">
+  <!-- JAK DZIALAMY -->
+  <section class="section section--white fade-in">
     <div class="container">
       <h2 class="section-title">Jak działamy? Instrukcja krok po kroku.</h2>
-      <div class="process-grid-2x2">
-        <div class="process-step">
-          <div class="step-number">01</div>
-          <div class="step-icon"><span class="step-symbol">FREE</span></div>
+      <div class="grid grid--2x2">
+        <article class="step-card">
+          <span class="step-num">01</span>
+          <span class="step-badge">FREE</span>
           <h3>MINI AUDYT</h3>
           <h4>Nasze narzędzia sprawdzają Twoje działania w sieci za darmo</h4>
-          <p>Szybka analiza Twojej strony, social mediów i procesów. Bez zobowiązań i umów. Po wybraniu darmowego narzędzia, podajemy adres e-mail i otrzymujemy po kilku minutach analizę. Analiza jest wstępem do kroku 2. </p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">02</div>
-          <div class="step-icon"><span class="step-symbol">PDF</span></div>
+          <p>Szybka analiza Twojej strony, social mediów i procesów. Bez zobowiązań i umów. Po wybraniu darmowego narzędzia, podajemy adres e-mail i otrzymujemy po kilku minutach analizę. Analiza jest wstępem do kroku 2.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-num">02</span>
+          <span class="step-badge">PDF</span>
           <h3>PEŁEN RAPORT</h3>
           <h4>Szczegółowa analiza i strategia</h4>
           <p>Zamawiasz i otrzymujesz dokładny raport z rekomendacjami i planem działania w zależności od tego, co chcesz poprawić, lub zbudować. Raport wykonujemy samodzielnie w oparciu o wiedzę ekspercką i narzędzia analityczne. Czas oczekiwania do 7 dni. Pora na krok 3.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">03</div>
-          <div class="step-icon"><span class="step-symbol">CALL</span></div>
+        </article>
+        <article class="step-card">
+          <span class="step-num">03</span>
+          <span class="step-badge">CALL</span>
           <h3>KONSULTACJA</h3>
           <h4>Omawiamy wyniki i planujemy działania</h4>
-          <p>Po otrzymaniu raportu sam decydujesz czy wdrażamy udoskonalenia, czy nie. Wspólnie ustalamy priorytety, budżet i harmonogram działań Rozmowa trwa zazwyczaj od 30 do 60 minut. Online, telefonicznie lub na miejscu. </p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">04</div>
-          <div class="step-icon"><span class="step-symbol">GO</span></div>
+          <p>Po otrzymaniu raportu sam decydujesz czy wdrażamy udoskonalenia, czy nie. Wspólnie ustalamy priorytety, budżet i harmonogram działań. Rozmowa trwa zazwyczaj od 30 do 60 minut. Online, telefonicznie lub na miejscu.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-num">04</span>
+          <span class="step-badge">GO</span>
           <h3>PAKIET MIESIĘCZNY</h3>
           <h4>Wdrażamy i monitorujemy</h4>
-          <p>Dołączasz do elitarnego grona mistrzów działąń w sieci! Tutaj pora na nasze cuda. Regularna praca nad Twoim marketingiem. Ty widzisz stałe rezultaty w czytelnych raportach i efektach, my robimy resztę. Dbamy o Twój wizerunek, widoczność i usprawniamy Twoje działania. Możesz zrezygnować w dowolnej chwili.</p>
-        </div>
+          <p>Dołączasz do elitarnego grona mistrzów działań w sieci! Tutaj pora na nasze cuda. Regularna praca nad Twoim marketingiem. Ty widzisz stałe rezultaty w czytelnych raportach i efektach, my robimy resztę. Dbamy o Twój wizerunek, widoczność i usprawniamy Twoje działania. Możesz zrezygnować w dowolnej chwili.</p>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- RAPORTY -->
-  <section class="about tools-section fade-in" id="raporty">
+  <section class="section section--light" id="raporty">
     <div class="container">
-      <h2 class="section-title">Gotowe raporty i analizy</h2>
-      <p class="section-subtitle">Otrzymaj szczegółową analizę w ciągu 7 dni. Zamów raport z kluczowymi wskaźnikami, planem działania, statystyką, analityką, obrazem najbliższej konkurencji.</p>
-      <div class="about-grid">
-        <div class="about-card report-card">
-          <div class="about-icon">
-            <!-- span class="about-icon-emoji">SEO</span> -->
+      <h2 class="section-title fade-in">Gotowe raporty i analizy</h2>
+      <p class="section-sub fade-in">Otrzymaj szczegółową analizę w ciągu 7 dni. Zamów raport z kluczowymi wskaźnikami, planem działania, statystyką, analityką, obrazem najbliższej konkurencji.</p>
+      <div class="grid grid--3 fade-in">
+        <article class="card card--report">
+          <div class="card-icon">
             <img src="images/1raport-seo-geo.png" alt="Raport SEO i GEO">
           </div>
           <h3>Raport SEO i GEO</h3>
           <h4>Kompleksowa analiza</h4>
-          <p>Masz stronę, ale nikt jej nie znajduje? Otrzymasz szczegółową analizę z listą błędów, rekomendacjami słów kluczowych i planem działania na 30 dni. Przeanalizujemy Twoją najbliższą konkurencje. Wskażemy słowa i treści lubiane przez AI oraz Google.</p>
-          <div class="report-price">99 zł</div>
-          <p>Najniższa cena sprzed 30 dni: 149 zł</p>
-          <a href="#kontakt" class="btn-primary btn-card">Zamów raport</a>
-        </div>
-        <div class="about-card report-card">
-          <div class="about-icon">
-            <!-- span class="about-icon-emoji">SM</span -->
+          <p>Masz stronę, ale nikt jej nie znajduje? Otrzymasz szczegółową analizę z listą błędów, rekomendacjami słów kluczowych i planem działania na 30 dni. Przeanalizujemy Twoją najbliższą konkurencję. Wskażemy słowa i treści lubiane przez AI oraz Google.</p>
+          <div class="price">99 zł</div>
+          <p class="price-note">Najniższa cena sprzed 30 dni: 149 zł</p>
+          <a href="#kontakt" class="btn btn-primary btn-sm">Zamów raport</a>
+        </article>
+        <article class="card card--report">
+          <div class="card-icon">
             <img src="images/2social-media.png" alt="Audyt Social Media">
           </div>
           <h3>Audyt Social Media</h3>
           <h4>Analiza potencjału</h4>
           <p>Wiesz, że social media to kopalnia klientów, ale nie wiesz od czego zacząć? Audyt pokaże Ci co działa, co nie i jak to naprawić. Zarówno dla tych, którzy już aktywnie działają w social mediach i dla tych, którzy chcą zacząć w sposób przemyślany.</p>
-          <div class="report-price">149 zł</div>
-          <p>Najniższa cena sprzed 30 dni: 199 zł</p>
-          <a href="#kontakt" class="btn-primary btn-card">Zamów audyt</a>
-        </div>
-        <div class="about-card report-card">
-          <div class="about-icon">
-            <!-- span class="about-icon-emoji">AI</span> -->
+          <div class="price">149 zł</div>
+          <p class="price-note">Najniższa cena sprzed 30 dni: 199 zł</p>
+          <a href="#kontakt" class="btn btn-primary btn-sm">Zamów audyt</a>
+        </article>
+        <article class="card card--report">
+          <div class="card-icon">
             <img src="images/3raport-automatyzacji.png" alt="Raport Automatyzacji">
           </div>
           <h3>Raport Automatyzacji</h3>
           <h4>Mapa oszczędności</h4>
           <p>Automatyzacja i AI już gości na stałe w większości największych firm. Spędzasz godziny na powtarzalnych zadaniach? Otrzymasz mapę procesów do automatyzacji z kalkulacją oszczędności czasowych i finansowych.</p>
-          <div class="report-price">249 zł</div>
-          <p>Najniższa cena sprzed 30 dni: 299 zł</p>
-          <a href="#kontakt" class="btn-primary btn-card">Zamów raport</a>
-        </div>
+          <div class="price">249 zł</div>
+          <p class="price-note">Najniższa cena sprzed 30 dni: 299 zł</p>
+          <a href="#kontakt" class="btn btn-primary btn-sm">Zamów raport</a>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- SOCIAL PROOF -->
-  <section class="social-proof fade-in">
+  <section class="section section--light section--tight fade-in">
     <div class="container">
       <h2 class="section-title">Śledź nas w social media</h2>
-      <div class="social-boxes">
-        <a href="https://www.tiktok.com/@kacper_zawilinski_ai" class="social-box" target="_blank" rel="noopener noreferrer">
-          <img src="images/tiktok-logo.png" alt="TikTok" class="social-box-logo">
-          <div class="social-box-number">2,6K</div>
-          <div class="social-box-label">followers</div>
+      <div class="social-row">
+        <a href="https://www.tiktok.com/@kacper_zawilinski_ai" class="social-card" target="_blank" rel="noopener noreferrer">
+          <img src="images/tiktok-logo.png" alt="TikTok" class="social-card-logo">
+          <strong class="social-card-count">2,6K</strong>
+          <span class="social-card-label">followers</span>
         </a>
-        <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61572644542326" class="social-box" target="_blank" rel="noopener noreferrer">
-          <img src="images/facebook-logo.png" alt="Facebook" class="social-box-logo">
-          <div class="social-box-number">1,5K</div>
-          <div class="social-box-label">followers</div>
+        <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61572644542326" class="social-card" target="_blank" rel="noopener noreferrer">
+          <img src="images/facebook-logo.png" alt="Facebook" class="social-card-logo">
+          <strong class="social-card-count">1,5K</strong>
+          <span class="social-card-label">followers</span>
         </a>
-        <a href="https://www.instagram.com/kacper_zaw_ai" class="social-box" target="_blank" rel="noopener noreferrer">
-          <img src="images/instagram-logo.png" alt="Instagram" class="social-box-logo">
-          <div class="social-box-number">2,5K</div>
-          <div class="social-box-label">followers</div>
+        <a href="https://www.instagram.com/kacper_zaw_ai" class="social-card" target="_blank" rel="noopener noreferrer">
+          <img src="images/instagram-logo.png" alt="Instagram" class="social-card-logo">
+          <strong class="social-card-count">2,5K</strong>
+          <span class="social-card-label">followers</span>
         </a>
-        <a href="https://www.youtube.com/@Kacper_Zawilinski_AI" class="social-box" target="_blank" rel="noopener noreferrer">
-          <img src="images/youtube-logo.png" alt="YouTube" class="social-box-logo">
-          <div class="social-box-number">50K</div>
-          <div class="social-box-label">wyświetleń</div>
+        <a href="https://www.youtube.com/@Kacper_Zawilinski_AI" class="social-card" target="_blank" rel="noopener noreferrer">
+          <img src="images/youtube-logo.png" alt="YouTube" class="social-card-logo">
+          <strong class="social-card-count">50K</strong>
+          <span class="social-card-label">wyświetleń</span>
         </a>
-        <a href="https://www.linkedin.com/in/kacper-zawilinski" class="social-box" target="_blank" rel="noopener noreferrer">
-          <img src="images/linkedin-logo.png" alt="LinkedIn" class="social-box-logo">
-          <div class="social-box-number">20K</div>
-          <div class="social-box-label">wyświetleń</div>
+        <a href="https://www.linkedin.com/in/kacper-zawilinski" class="social-card" target="_blank" rel="noopener noreferrer">
+          <img src="images/linkedin-logo.png" alt="LinkedIn" class="social-card-logo">
+          <strong class="social-card-count">20K</strong>
+          <span class="social-card-label">wyświetleń</span>
         </a>
       </div>
     </div>
   </section>
 
   <!-- CERTYFIKATY -->
-  <section class="certificates fade-in" id="certyfikaty">
+  <section class="section section--light fade-in" id="certyfikaty">
     <div class="container">
       <h2 class="section-title">Nasze certyfikaty</h2>
       <div class="cert-list">
-        <div class="cert-panel" onclick="window.open('images/cert-uc-davis.png', '_blank')">
-          <div class="cert-image">
+        <a href="images/cert-uc-davis.png" class="cert-row" target="_blank" rel="noopener noreferrer">
+          <div class="cert-thumb">
             <img src="images/cert-uc-davis.png" alt="SEO Specialization - UC Davis">
-            <div class="cert-overlay">Kliknij aby powiększyć</div>
+            <span class="cert-overlay">Kliknij aby powiększyć</span>
           </div>
           <div class="cert-info">
             <h3>Search Engine Optimization (SEO)</h3>
             <p>University of California, Davis</p>
           </div>
-        </div>
-        <div class="cert-panel" onclick="window.open('images/cert-google-it.png', '_blank')">
-          <div class="cert-image">
+        </a>
+        <a href="images/cert-google-it.png" class="cert-row" target="_blank" rel="noopener noreferrer">
+          <div class="cert-thumb">
             <img src="images/cert-google-it.png" alt="IT Support Certificate - Google">
-            <div class="cert-overlay">Kliknij aby powiększyć</div>
+            <span class="cert-overlay">Kliknij aby powiększyć</span>
           </div>
           <div class="cert-info">
             <h3>Google IT Support</h3>
             <p>Google Career Certificates</p>
           </div>
-        </div>
-        <div class="cert-panel" onclick="window.open('images/kurs-marketing.png', '_blank')">
-          <div class="cert-image">
+        </a>
+        <a href="images/kurs-marketing.png" class="cert-row" target="_blank" rel="noopener noreferrer">
+          <div class="cert-thumb">
             <img src="images/kurs-marketing.png" alt="Specjalista ds. Marketingu">
-            <div class="cert-overlay">Kliknij aby powiększyć</div>
+            <span class="cert-overlay">Kliknij aby powiększyć</span>
           </div>
           <div class="cert-info">
             <h3>Specjalista ds. Marketingu</h3>
             <p>Centrum Rozwoju Personalnego we Wrocławiu</p>
           </div>
-        </div>
-        <div class="cert-panel" onclick="window.open('images/cert-ai-essentials.png', '_blank')">
-          <div class="cert-image">
+        </a>
+        <a href="images/cert-ai-essentials.png" class="cert-row" target="_blank" rel="noopener noreferrer">
+          <div class="cert-thumb">
             <img src="images/cert-ai-essentials.png" alt="AI Essentials - Professional Certificate">
-            <div class="cert-overlay">Kliknij aby powiększyć</div>
+            <span class="cert-overlay">Kliknij aby powiększyć</span>
           </div>
           <div class="cert-info">
             <h3>AI Essentials</h3>
             <p>Google Career Certificates</p>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- OFERTA -->
-  <section class="packages fade-in" id="oferta">
+  <section class="section section--light" id="oferta">
     <div class="container">
-      <h2 class="section-title">Wybierz pakiet dopasowany do Twoich potrzeb</h2>
-
-      <!-- 3 Boxy Pakietów -->
-      <div class="packages-grid">
-        <!-- BOX 1: NIEWIDZIALNY (SEO) -->
-        <div class="package-box">
-          <div class="about-icon">
+      <h2 class="section-title fade-in">Wybierz pakiet dopasowany do Twoich potrzeb</h2>
+      <div class="grid grid--3 fade-in">
+        <article class="pkg-card">
+          <div class="card-icon">
             <img src="images/niewidzialny.png" alt="Pakiet niewidzialny">
-           <!-- span class="about-icon-emoji">I</span> -->
           </div>
           <h3>NIEWIDZIALNY</h3>
-          <p>Pakiet SEO i GEO</p>
-          <div class="package-problem"><strong>Problem:</strong> Masz stronę, ale nikt jej nie znajduje. Konkurencja jest wyżej. Tracisz potencjalnych klientów każdego dnia.</div>
-          <div class="package-tier-info">
-            <div class="tier-mini">
-              <div class="tier-header">
+          <p class="pkg-subtitle">Pakiet SEO i GEO</p>
+          <div class="pkg-problem"><strong>Problem:</strong> Masz stronę, ale nikt jej nie znajduje. Konkurencja jest wyżej. Tracisz potencjalnych klientów każdego dnia.</div>
+          <div class="pkg-tiers">
+            <div class="tier">
+              <div class="tier-head">
                 <span class="tier-label">Start</span>
                 <span class="tier-price">99 zł</span>
               </div>
-              <p class="tier-name">Zamów najpierw raport SEO, GEO</p>
+              <p>Zamów najpierw raport SEO, GEO</p>
             </div>
-            <div class="tier-mini">
-              <div class="tier-header">
+            <div class="tier">
+              <div class="tier-head">
                 <span class="tier-label">Pakiet</span>
                 <span class="tier-price">od 400 zł/msc</span>
               </div>
-              <p class="tier-name">Zwiększanie widoczności</p>
+              <p>Zwiększanie widoczności</p>
             </div>
           </div>
-          <div class="package-result"><strong>Rezultat:</strong> Budujemy linki zwrotne, działamy on-page i off-page. Pracujemy nad autorytetem i zaufaniem (E-E-A-T). Pracujemy technicznie nad witryną/sklepem. W 3-6 miesięcy Twoja witryna pojawia się w TOP 20 Google dla kluczowych fraz, w ChatGPT, Gemini innych Chatbotach AI.</div>
-          <div class="button-group">
-            <a href="#raporty" class="btn-secondary btn-small">Zamów raport</a>
-            <a href="#kontakt" class="btn-primary btn-small">Konsultacja</a>
+          <div class="pkg-result"><strong>Rezultat:</strong> Budujemy linki zwrotne, działamy on-page i off-page. Pracujemy nad autorytetem i zaufaniem (E-E-A-T). Pracujemy technicznie nad witryną/sklepem. W 3-6 miesięcy Twoja witryna pojawia się w TOP 20 Google dla kluczowych fraz, w ChatGPT, Gemini innych Chatbotach AI.</div>
+          <div class="pkg-actions">
+            <a href="#raporty" class="btn btn-secondary btn-sm">Zamów raport</a>
+            <a href="#kontakt" class="btn btn-primary btn-sm">Konsultacja</a>
           </div>
-        </div>
-
-        <!-- BOX 2: VIRAL POTENTIAL (Social Media) -->
-        <div class="package-box">
-          <div class="about-icon">
+        </article>
+        <article class="pkg-card">
+          <div class="card-icon">
             <img src="images/viral.png" alt="Pakiet viral">
           </div>
           <h3>VIRAL POTENTIAL</h3>
-          <p>Pakiet Social Media</p>
-          <div class="package-problem"><strong>Problem:</strong> Wiesz, że Instagram/TikTok/Facebook to kopalnia klientów, ale nie masz czasu na regularne tworzenie treści.</div>
-          <div class="package-tier-info">
-            <div class="tier-mini">
-              <div class="tier-header">
+          <p class="pkg-subtitle">Pakiet Social Media</p>
+          <div class="pkg-problem"><strong>Problem:</strong> Wiesz, że Instagram/TikTok/Facebook to kopalnia klientów, ale nie masz czasu na regularne tworzenie treści.</div>
+          <div class="pkg-tiers">
+            <div class="tier">
+              <div class="tier-head">
                 <span class="tier-label">Start</span>
                 <span class="tier-price">149 zł</span>
               </div>
-              <p class="tier-name">Audyt Social Media</p>
+              <p>Audyt Social Media</p>
             </div>
-            <div class="tier-mini">
-              <div class="tier-header">
+            <div class="tier">
+              <div class="tier-head">
                 <span class="tier-label">Pakiet</span>
                 <span class="tier-price">od 400 zł/msc</span>
               </div>
-              <p class="tier-name">Content &amp; Social Media</p>
+              <p>Content &amp; Social Media</p>
             </div>
           </div>
-          <div class="package-result"><strong>Rezultat:</strong> Regularny, profesjonalny content w Social Media. Dobieramy odpowiednie kanały dla Twojej firmy: YouTube, TikTok, Facebook, Instagram. LinkedIN, X. Mamy wypracowany plan marketingowy i celujemy treści w buyer persone. Jeżeli chcesz, w ramach pakietu szkolimy Ciebie. Albo zostawiasz to nam. Budujemy rozpoznawalność i zyskujesz nowe kanały sprzedaży.</div>
-          <div class="button-group">
-            <a href="#raporty" class="btn-secondary btn-small">Zamów raport</a>
-            <a href="#kontakt" class="btn-primary btn-small">Konsultacja</a>
+          <div class="pkg-result"><strong>Rezultat:</strong> Regularny, profesjonalny content w Social Media. Dobieramy odpowiednie kanały dla Twojej firmy: YouTube, TikTok, Facebook, Instagram. LinkedIn, X. Mamy wypracowany plan marketingowy i celujemy treści w buyer persone. Jeżeli chcesz, w ramach pakietu szkolimy Ciebie. Albo zostawiasz to nam. Budujemy rozpoznawalność i zyskujesz nowe kanały sprzedaży.</div>
+          <div class="pkg-actions">
+            <a href="#raporty" class="btn btn-secondary btn-sm">Zamów raport</a>
+            <a href="#kontakt" class="btn btn-primary btn-sm">Konsultacja</a>
           </div>
-        </div>
-
-        <!-- BOX 3: AUTOPILOT (Automatyzacja) -->
-        <div class="package-box">
-          <div class="about-icon">
-            <!-- span class="about-icon-emoji">AI</span> -->
-           <img src="images/autopilot.png" alt="Pakiet autopilot">
+        </article>
+        <article class="pkg-card">
+          <div class="card-icon">
+            <img src="images/autopilot.png" alt="Pakiet autopilot">
           </div>
           <h3>AUTOPILOT</h3>
-          <p>Pakiet automatyzacji firmy</p>
-          <div class="package-problem"><strong>Problem:</strong> Spędzasz godziny na rzeczach, które mogłaby robić maszyna. Twój czas jest zbyt cenny na to.</div>
-          <div class="package-tier-info">
-            <div class="tier-mini">
-              <div class="tier-header">
+          <p class="pkg-subtitle">Pakiet automatyzacji firmy</p>
+          <div class="pkg-problem"><strong>Problem:</strong> Spędzasz godziny na rzeczach, które mogłaby robić maszyna. Twój czas jest zbyt cenny na to.</div>
+          <div class="pkg-tiers">
+            <div class="tier">
+              <div class="tier-head">
                 <span class="tier-label">Start</span>
                 <span class="tier-price">249 zł</span>
               </div>
-              <p class="tier-name">Audyt Automatyzacji</p>
+              <p>Audyt Automatyzacji</p>
             </div>
-            <div class="tier-mini">
-              <div class="tier-header">
+            <div class="tier">
+              <div class="tier-head">
                 <span class="tier-label">Wdrożenie</span>
                 <span class="tier-price">Indywidualnie</span>
               </div>
-              <p class="tier-name">Automatyzacja procesów</p>
+              <p>Automatyzacja procesów</p>
             </div>
           </div>
-          <div class="package-result"><strong>Rezultat:</strong> Automatyzujemy: obiegi dokumentów, wypełnianie dokumentów, raporty, obsługę klienta, pozyskiwanie klienta, organizację pracy. Dedykowane oprogramowania i przepływy pracy. Z AI lub bez. Oszczędzasz 10-20 godzin tygodniowo. System pracuje za Ciebie 24/7.</div>
-          <div class="button-group">
-            <a href="#raporty" class="btn-secondary btn-small">Zamów raport</a>
-            <a href="#kontakt" class="btn-primary btn-small">Konsultacja</a>
+          <div class="pkg-result"><strong>Rezultat:</strong> Automatyzujemy: obiegi dokumentów, wypełnianie dokumentów, raporty, obsługę klienta, pozyskiwanie klienta, organizację pracy. Dedykowane oprogramowania i przepływy pracy. Z AI lub bez. Oszczędzasz 10-20 godzin tygodniowo. System pracuje za Ciebie 24/7.</div>
+          <div class="pkg-actions">
+            <a href="#raporty" class="btn btn-secondary btn-sm">Zamów raport</a>
+            <a href="#kontakt" class="btn btn-primary btn-sm">Konsultacja</a>
           </div>
-        </div>
+        </article>
       </div>
 
-      <!-- Box Strona WWW -->
-      <div class="website-box">
+      <!-- Strona WWW -->
+      <div class="www-box fade-in">
         <h3>Potrzebujesz strony www lub sklepu online?</h3>
         <p>Tym również się zajmujemy</p>
-        <div class="website-box-price">
-          <span class="website-price">od 1000 zł</span>
+        <div class="www-price">
+          <strong>od 1000 zł</strong>
           <small>z hostingiem i domeną</small>
         </div>
-        <a href="#kontakt" class="btn-primary">Zapytaj o stronę</a>
+        <a href="#kontakt" class="btn btn-primary">Zapytaj o stronę</a>
       </div>
 
-      <!-- Pakiet VIP -->
-      <div class="package-vip">
-        <div class="vip-badge">Tylko 3-5 klientów rocznie</div>
-        <div class="vip-content">
-          <!-- div class="package-icon-small"><span class="tool-symbol" style="color: white; font-size: 32px;">VIP</span></div> -->
+      <!-- VIP -->
+      <div class="vip-box fade-in">
+        <span class="vip-badge">Tylko 3-5 klientów rocznie</span>
+        <div class="vip-inner">
           <div class="vip-icon">
-  <img src="images/vip.png" alt="VIP">
-</div>
+            <img src="images/vip.png" alt="VIP">
+          </div>
           <h3>KOMPLEKSOWY VIP</h3>
           <p class="vip-tagline">Wszystko pod klucz</p>
-          <p class="vip-description">SEO i GEO + Social Media + Automatyzacje + Wsparcie. Dla firm, które chcą oddelegować cały marketing i skupić się na na tym, co najważniejsze - na klientach.</p>
+          <p class="vip-desc">SEO i GEO + Social Media + Automatyzacje + Wsparcie. Dla firm, które chcą oddelegować cały marketing i skupić się na tym, co najważniejsze - na klientach.</p>
           <ul class="vip-list">
             <li>Pełen zakres wszystkich pakietów</li>
             <li>Sesja strategiczna co miesiąc</li>
             <li>Priorytetowe wsparcie</li>
             <li>Dostęp do nas 12 godzin przez 6 dni w tygodniu</li>
           </ul>
-          <div class="button-group button-group-vip">
-            <a href="#kontakt" class="btn-outline-white">Zamów pełen audyt</a>
-            <a href="#kontakt" class="btn-primary large">Chcę być VIP</a>
+          <div class="vip-btns">
+            <a href="#kontakt" class="btn btn-outline-light">Zamów pełen audyt</a>
+            <a href="#kontakt" class="btn btn-primary btn-lg">Chcę być VIP</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA BOTTOM -->
-  <section class="cta-bottom">
-    <div class="cta-container">
-      <div class="cta-image">
-        <div class="cta-image-placeholder"></div>
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="cta-band-inner">
+      <div class="cta-band-visual">
+        <div class="cta-band-placeholder"></div>
       </div>
-      <div class="cta-content">
+      <div class="cta-band-text">
         <h2>To jak? Zaczynamy?</h2>
         <h3>Czas zrobić coś dla siebie!</h3>
         <p>Wybierz jeden z naszych pakietów: SEO, Social Media, automatyzacja, lub wszystko razem w pakiecie VIP. Jesteśmy tu, żeby wspierać Cię na każdym kroku – bez presji, za to z efektem!</p>
-        <a href="#oferta" class="btn-outline-white">Wybierz coś dla siebie</a>
+        <a href="#oferta" class="btn btn-outline-light">Wybierz coś dla siebie</a>
       </div>
     </div>
   </section>
 
   <!-- KONTAKT -->
-  <section class="contact fade-in" id="kontakt">
+  <section class="section section--light" id="kontakt">
     <div class="container">
-      <h2 class="section-title">Gotowy na pierwszy krok?</h2>
-      <p class="section-subtitle">Napisz, zadzwoń lub zostaw wiadomość — odpowiemy do 48h.</p>
-
-      <div class="contact-grid">
+      <h2 class="section-title fade-in">Gotowy na pierwszy krok?</h2>
+      <p class="section-sub fade-in">Napisz, zadzwoń lub zostaw wiadomość — odpowiemy do 48h.</p>
+      <div class="contact-grid fade-in">
         <div class="contact-info">
           <div class="contact-item">
             <strong>Email</strong>
@@ -504,28 +471,27 @@
             <a href="tel:+48515897879">+48 515 897 879</a>
           </div>
         </div>
-
-        <div class="contact-form-wrapper">
-          <form id="contactForm">
-            <div class="form-group">
+        <div class="contact-form-box">
+          <form id="contactForm" novalidate>
+            <div class="form-field">
               <input type="text" name="name" placeholder="Imię *" required>
             </div>
-            <div class="form-group">
+            <div class="form-field">
               <input type="email" name="email" placeholder="Email *" required>
             </div>
-            <div class="form-group">
+            <div class="form-field">
               <input type="tel" name="phone" placeholder="Telefon">
             </div>
-            <div class="form-group">
+            <div class="form-field">
               <textarea name="message" placeholder="Wiadomość *" rows="5" required></textarea>
             </div>
-            <div class="form-group checkbox">
+            <div class="form-field form-field--check">
               <input type="checkbox" id="rodo" name="rodo" required>
               <label for="rodo">Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z RODO w celu odpowiedzi na moje zapytanie.</label>
             </div>
-            <button type="submit" class="btn-primary">Wyślij wiadomość</button>
+            <button type="submit" class="btn btn-primary btn-full">Wyślij wiadomość</button>
           </form>
-          <div id="formSuccess" class="form-success">Dziękujemy! Twoja wiadomość została wysłana. Daj nam czas, abyśmy przygotowali dla Ciebie idealne rozwiązanie. Odezwiemy się w ciągu 48h.</div>
+          <div id="formSuccess" class="form-ok">Dziękujemy! Twoja wiadomość została wysłana. Daj nam czas, abyśmy przygotowali dla Ciebie idealne rozwiązanie. Odezwiemy się w ciągu 48h.</div>
         </div>
       </div>
     </div>
@@ -536,11 +502,11 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <div class="footer-logo">
-            <img src="images/logo.png" alt="POMELO" class="footer-logo-img">
+          <div class="footer-brand">
+            <img src="images/logo.png" alt="POMELO" class="footer-logo">
           </div>
           <p class="footer-tagline">Marketing and Soft</p>
-          <p class="footer-description">"Budujemy marketing, który daje wolność"</p>
+          <p class="footer-motto">"Budujemy marketing, który daje wolność"</p>
         </div>
         <div class="footer-col">
           <h4>Nawigacja</h4>
@@ -557,16 +523,16 @@
           </ul>
         </div>
         <div class="footer-col">
-  <h4>Social Media</h4>
-  <div class="footer-social">
-    <a href="https://www.tiktok.com/@kacper_zawilinski_ai" class="social-link" target="_blank" rel="noopener noreferrer">TikTok</a>
-    <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61572644542326" class="social-link" target="_blank" rel="noopener noreferrer">Facebook</a>
-    <a href="https://www.youtube.com/@Kacper_Zawilinski_AI" class="social-link" target="_blank" rel="noopener noreferrer">YouTube</a>
-    <a href="https://www.linkedin.com/in/kacper-zawilinski" class="social-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <a href="https://x.com/Kacper_Zaw_AI" class="social-link" target="_blank" rel="noopener noreferrer">Twitter</a>
-    <a href="https://www.instagram.com/kacper_zaw_ai" class="social-link" target="_blank" rel="noopener noreferrer">Instagram</a>
-  </div>
-</div>
+          <h4>Social Media</h4>
+          <div class="footer-social">
+            <a href="https://www.tiktok.com/@kacper_zawilinski_ai" target="_blank" rel="noopener noreferrer">TikTok</a>
+            <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61572644542326" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://www.youtube.com/@Kacper_Zawilinski_AI" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://www.linkedin.com/in/kacper-zawilinski" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://x.com/Kacper_Zaw_AI" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://www.instagram.com/kacper_zaw_ai" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 POMELO Marketing and Soft. All rights reserved.</p>
@@ -575,48 +541,48 @@
   </footer>
 
   <!-- COOKIE BANNER -->
-  <div class="cookie-banner" id="cookieBanner">
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Zgoda na cookies">
     <div class="cookie-banner-inner">
-      <div class="cookie-banner-text">
+      <p class="cookie-banner-text">
         Używamy plików cookies niezbędnych do działania strony oraz – za Twoją zgodą – cookies analitycznych (Google Analytics 4) do analizy ruchu i poprawy jakości usług.
         Więcej w <a href="polityka-cookies.html">Polityce Cookies</a> i <a href="polityka-prywatnosci.html">Polityce Prywatności</a>.
-      </div>
-      <div class="cookie-banner-actions">
-        <button class="cookie-btn-accept" id="cookieAcceptAll">Akceptuj wszystkie</button>
-        <button class="cookie-btn-reject" id="cookieReject">Odrzuć</button>
-        <button class="cookie-btn-settings" id="cookieSettings">Ustawienia</button>
+      </p>
+      <div class="cookie-banner-btns">
+        <button class="btn btn-primary btn-sm" id="cookieAcceptAll">Akceptuj wszystkie</button>
+        <button class="btn btn-secondary btn-sm" id="cookieReject">Odrzuć</button>
+        <button class="btn-text" id="cookieSettingsBtn">Ustawienia</button>
       </div>
     </div>
   </div>
 
-  <!-- COOKIE SETTINGS MODAL -->
-  <div class="cookie-modal-overlay" id="cookieModal">
+  <!-- COOKIE MODAL -->
+  <div class="cookie-overlay" id="cookieModal" role="dialog" aria-label="Ustawienia cookies">
     <div class="cookie-modal">
       <h2>Ustawienia plików cookies</h2>
-      <div class="cookie-category">
-        <div class="cookie-category-header">
+      <div class="cookie-cat">
+        <div class="cookie-cat-head">
           <h3>Niezbędne</h3>
-          <span class="cookie-badge">Zawsze aktywne</span>
-          <label class="cookie-toggle">
+          <span class="badge badge--active">Zawsze aktywne</span>
+          <label class="toggle">
             <input type="checkbox" checked disabled>
-            <span class="cookie-toggle-slider"></span>
+            <span class="toggle-track"></span>
           </label>
         </div>
         <p>Wymagane do poprawnego działania strony: wybór języka, sesja formularza, bezpieczeństwo.</p>
       </div>
-      <div class="cookie-category">
-        <div class="cookie-category-header">
+      <div class="cookie-cat">
+        <div class="cookie-cat-head">
           <h3>Analityczne (Google Analytics 4)</h3>
-          <label class="cookie-toggle">
+          <label class="toggle">
             <input type="checkbox" id="cookieAnalyticsToggle">
-            <span class="cookie-toggle-slider"></span>
+            <span class="toggle-track"></span>
           </label>
         </div>
         <p>Zbierają anonimowe statystyki odwiedzin. Pomagają nam ulepszać stronę. Dane są pseudonimizowane i przechowywane 14 miesięcy.</p>
       </div>
-      <div class="cookie-modal-actions">
-        <button class="cookie-btn-reject" id="cookieModalSave">Zapisz wybór</button>
-        <button class="cookie-btn-accept" id="cookieModalAcceptAll">Akceptuj wszystkie</button>
+      <div class="cookie-modal-btns">
+        <button class="btn btn-secondary" id="cookieModalSave">Zapisz wybór</button>
+        <button class="btn btn-primary" id="cookieModalAcceptAll">Akceptuj wszystkie</button>
       </div>
     </div>
   </div>
