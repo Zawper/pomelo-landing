@@ -129,4 +129,149 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ==================== COOKIE CONSENT ====================
+
+  const COOKIE_NAME = 'pomelo_cookie_consent';
+  const COOKIE_EXPIRY_DAYS = 365;
+
+  function getCookieConsent() {
+    const match = document.cookie.match(new RegExp('(^| )' + COOKIE_NAME + '=([^;]+)'));
+    if (match) {
+      try {
+        return JSON.parse(decodeURIComponent(match[2]));
+      } catch (e) {
+        return null;
+      }
+    }
+    return null;
+  }
+
+  function setCookieConsent(analytics) {
+    const value = JSON.stringify({ necessary: true, analytics: analytics });
+    const date = new Date();
+    date.setTime(date.getTime() + COOKIE_EXPIRY_DAYS * 24 * 60 * 60 * 1000);
+    document.cookie = COOKIE_NAME + '=' + encodeURIComponent(value) + ';expires=' + date.toUTCString() + ';path=/;SameSite=Lax';
+  }
+
+  function initGA4() {
+    if (window._ga4Loaded) return;
+    window._ga4Loaded = true;
+    // Replace G-XXXXXXXX with your actual GA4 Measurement ID
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX';
+    document.head.appendChild(script);
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXX');
+  }
+
+  function showCookieBanner() {
+    var banner = document.getElementById('cookieBanner');
+    if (banner) {
+      setTimeout(function() { banner.classList.add('show'); }, 300);
+    }
+  }
+
+  function hideCookieBanner() {
+    var banner = document.getElementById('cookieBanner');
+    if (banner) banner.classList.remove('show');
+  }
+
+  function showCookieSettings() {
+    hideCookieBanner();
+    var modal = document.getElementById('cookieModal');
+    if (modal) modal.classList.add('show');
+  }
+
+  function hideCookieSettings() {
+    var modal = document.getElementById('cookieModal');
+    if (modal) modal.classList.remove('show');
+  }
+
+  function saveCookieConsent(analytics) {
+    setCookieConsent(analytics);
+    hideCookieBanner();
+    hideCookieSettings();
+    if (analytics) {
+      initGA4();
+    }
+  }
+
+  // Check existing consent
+  var consent = getCookieConsent();
+  if (consent === null) {
+    showCookieBanner();
+  } else if (consent.analytics === true) {
+    initGA4();
+  }
+
+  // Banner buttons
+  var btnAcceptAll = document.getElementById('cookieAcceptAll');
+  var btnReject = document.getElementById('cookieReject');
+  var btnSettings = document.getElementById('cookieSettings');
+
+  if (btnAcceptAll) {
+    btnAcceptAll.addEventListener('click', function() {
+      saveCookieConsent(true);
+    });
+  }
+
+  if (btnReject) {
+    btnReject.addEventListener('click', function() {
+      saveCookieConsent(false);
+    });
+  }
+
+  if (btnSettings) {
+    btnSettings.addEventListener('click', function() {
+      showCookieSettings();
+    });
+  }
+
+  // Modal buttons
+  var btnModalSave = document.getElementById('cookieModalSave');
+  var btnModalAcceptAll = document.getElementById('cookieModalAcceptAll');
+  var analyticsToggle = document.getElementById('cookieAnalyticsToggle');
+
+  if (btnModalSave) {
+    btnModalSave.addEventListener('click', function() {
+      var analyticsVal = analyticsToggle ? analyticsToggle.checked : false;
+      saveCookieConsent(analyticsVal);
+    });
+  }
+
+  if (btnModalAcceptAll) {
+    btnModalAcceptAll.addEventListener('click', function() {
+      if (analyticsToggle) analyticsToggle.checked = true;
+      saveCookieConsent(true);
+    });
+  }
+
+  // Close modal on overlay click
+  var modalOverlay = document.getElementById('cookieModal');
+  if (modalOverlay) {
+    modalOverlay.addEventListener('click', function(e) {
+      if (e.target === modalOverlay) {
+        hideCookieSettings();
+      }
+    });
+  }
+
+  // Footer "Zarządzaj cookies" link
+  var manageCookiesLink = document.getElementById('manage-cookies');
+  if (manageCookiesLink) {
+    manageCookiesLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      // Pre-fill modal toggle based on current consent
+      var currentConsent = getCookieConsent();
+      if (analyticsToggle && currentConsent) {
+        analyticsToggle.checked = currentConsent.analytics;
+      }
+      showCookieSettings();
+    });
+  }
+
 });
