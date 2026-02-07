@@ -200,13 +200,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Check existing consent
+  // Check existing consent – load GA4 if previously accepted
   var consent = getCookieConsent();
-  if (consent === null) {
-    showCookieBanner();
-  } else if (consent.analytics === true) {
+  if (consent && consent.analytics === true) {
     initGA4();
   }
+  // Always show banner on page load
+  showCookieBanner();
 
   // Banner buttons
   var btnAcceptAll = document.getElementById('cookieAcceptAll');
