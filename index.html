@@ -549,6 +549,7 @@
             <li><a href="#kontakt">Kontakt</a></li>
             <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
             <li><a href="polityka-cookies.html">Polityka Cookies</a></li>
+            <li><a href="#" id="manage-cookies">Zarządzaj cookies</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -568,6 +569,53 @@
       </div>
     </div>
   </footer>
+
+  <!-- COOKIE BANNER -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner-inner">
+      <div class="cookie-banner-text">
+        Używamy plików cookies niezbędnych do działania strony oraz – za Twoją zgodą – cookies analitycznych (Google Analytics 4) do analizy ruchu i poprawy jakości usług.
+        Więcej w <a href="polityka-cookies.html">Polityce Cookies</a> i <a href="polityka-prywatnosci.html">Polityce Prywatności</a>.
+      </div>
+      <div class="cookie-banner-actions">
+        <button class="cookie-btn-accept" id="cookieAcceptAll">Akceptuj wszystkie</button>
+        <button class="cookie-btn-reject" id="cookieReject">Odrzuć</button>
+        <button class="cookie-btn-settings" id="cookieSettings">Ustawienia</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- COOKIE SETTINGS MODAL -->
+  <div class="cookie-modal-overlay" id="cookieModal">
+    <div class="cookie-modal">
+      <h2>Ustawienia plików cookies</h2>
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <h3>Niezbędne</h3>
+          <span class="cookie-badge">Zawsze aktywne</span>
+          <label class="cookie-toggle">
+            <input type="checkbox" checked disabled>
+            <span class="cookie-toggle-slider"></span>
+          </label>
+        </div>
+        <p>Wymagane do poprawnego działania strony: wybór języka, sesja formularza, bezpieczeństwo.</p>
+      </div>
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <h3>Analityczne (Google Analytics 4)</h3>
+          <label class="cookie-toggle">
+            <input type="checkbox" id="cookieAnalyticsToggle">
+            <span class="cookie-toggle-slider"></span>
+          </label>
+        </div>
+        <p>Zbierają anonimowe statystyki odwiedzin. Pomagają nam ulepszać stronę. Dane są pseudonimizowane i przechowywane 14 miesięcy.</p>
+      </div>
+      <div class="cookie-modal-actions">
+        <button class="cookie-btn-reject" id="cookieModalSave">Zapisz wybór</button>
+        <button class="cookie-btn-accept" id="cookieModalAcceptAll">Akceptuj wszystkie</button>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
