@@ -83,9 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
       let valid = true;
-
       contactForm.querySelectorAll('.form-group').forEach(g => g.classList.remove('error'));
 
       const name = contactForm.querySelector('[name="name"]');
@@ -113,10 +111,16 @@ document.addEventListener('DOMContentLoaded', () => {
         valid = false;
       }
 
-      if (valid) {
+      if (!valid) {
+        e.preventDefault();
+        return;
+      }
+
+      // Jeśli valid - formularz wyśle się normalnie przez Formspree
+      setTimeout(() => {
         contactForm.style.display = 'none';
         formSuccess.classList.add('show');
-      }
+      }, 500);
     });
   }
 
