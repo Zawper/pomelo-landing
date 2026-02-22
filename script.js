@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==================== COOKIE CONSENT ====================
 
   const COOKIE_NAME = 'pomelo_cookie_consent';
-  const COOKIE_EXPIRY_DAYS = 365;
+  const COOKIE_EXPIRY_HOURS = 1;
 
   function getCookieConsent() {
     try {
@@ -211,8 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function setCookieConsent(analytics) {
     const value = JSON.stringify({ necessary: true, analytics: analytics });
     const date = new Date();
-    date.setTime(date.getTime() + COOKIE_EXPIRY_DAYS * 24 * 60 * 60 * 1000);
-    // Secure flag działa tylko na HTTPS (Vercel = zawsze HTTPS) ✓
+date.setTime(date.getTime() + COOKIE_EXPIRY_HOURS * 60 * 60 * 1000);    // Secure flag działa tylko na HTTPS (Vercel = zawsze HTTPS) ✓
     document.cookie = COOKIE_NAME + '=' + encodeURIComponent(value)
       + ';expires=' + date.toUTCString()
       + ';path=/'
