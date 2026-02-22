@@ -223,8 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function initGA4() {
     if (window._ga4Loaded) return;
     window._ga4Loaded = true;
-    // UWAGA: Zastąp G-XXXXXXXX swoim prawdziwym GA4 Measurement ID!
-    var GA4_ID = 'G-XXXXXXXX'; // <-- ZMIEŃ TO NA SWÓJ ID
+    var GA4_ID = 'G-LJLQKVTBRH'; 
     var script = document.createElement('script');
     script.async = true;
     script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
