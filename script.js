@@ -288,8 +288,10 @@ date.setTime(date.getTime() + COOKIE_EXPIRY_HOURS * 60 * 60 * 1000);    // Secur
   var btnSettings = document.getElementById('cookieSettings');
 
   if (btnAcceptAll) btnAcceptAll.addEventListener('click', function() { saveCookieConsent(true); });
-  if (btnReject) btnReject.addEventListener('click', function() { saveCookieConsent(false); });
-  if (btnSettings) btnSettings.addEventListener('click', function() { showCookieSettings(); });
+if (btnReject) btnReject.addEventListener('click', function() {
+  saveCookieConsent(false);
+  window.location.href = 'polityka-cookies.html';
+});  if (btnSettings) btnSettings.addEventListener('click', function() { showCookieSettings(); });
 
   // Modal buttons
   var btnModalSave = document.getElementById('cookieModalSave');
