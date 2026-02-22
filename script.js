@@ -19,12 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('active');
       navMenu.classList.toggle('active');
+      // Accessibility
+      hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
     });
 
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
       });
     });
   }
@@ -33,7 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       const href = anchor.getAttribute('href');
-      if (href === '#') return;
+      if (href === '#') {
+        e.preventDefault(); // POPRAWKA: zawsze zapobiegaj skokom strony dla href="#"
+        return;
+      }
       e.preventDefault();
       const target = document.querySelector(href);
       if (target) {
@@ -77,12 +83,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-  // ==================== FORM VALIDATION ====================
+  // ==================== FORM VALIDATION + SECURITY ====================
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
 
+  // POPRAWKA: Funkcja sanityzacji inputów - usuwa potencjalnie niebezpieczne znaki
+  function sanitizeInput(str) {
+    if (typeof str !== 'string') return '';
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#x27;')
+      .replace(/\//g, '&#x2F;')
+      .trim();
+  }
+
+  // POPRAWKA: Rate limiting - zapobiega spamowi wielokrotnego wysyłania
+  let formSubmitCount = 0;
+  let lastSubmitTime = 0;
+  const MAX_SUBMITS = 3;
+  const SUBMIT_COOLDOWN = 60000; // 1 minuta
+
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
+      // POPRAWKA: Rate limiting check
+      const now = Date.now();
+      if (now - lastSubmitTime < SUBMIT_COOLDOWN && formSubmitCount >= MAX_SUBMITS) {
+        e.preventDefault();
+        alert('Zbyt wiele prób wysłania. Poczekaj chwilę i spróbuj ponownie.');
+        return;
+      }
+
+      // POPRAWKA: Honeypot check (pole ukryte - boty je wypełniają, ludzie nie)
+      const honeypot = contactForm.querySelector('[name="website"]');
+      if (honeypot && honeypot.value !== '') {
+        e.preventDefault(); // Cicho odrzucamy - bot nie powinien wiedzieć że został wykryty
+        contactForm.style.display = 'none';
+        formSuccess.classList.add('show');
+        return;
+      }
+
       let valid = true;
       contactForm.querySelectorAll('.form-group').forEach(g => g.classList.remove('error'));
 
@@ -91,17 +133,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const message = contactForm.querySelector('[name="message"]');
       const rodo = contactForm.querySelector('#rodo');
 
-      if (!name.value.trim()) {
+      // POPRAWKA: Sprawdzamy i sanityzujemy wartości
+      const nameVal = sanitizeInput(name.value);
+      const emailVal = sanitizeInput(email.value);
+      const messageVal = sanitizeInput(message.value);
+
+      if (!nameVal || nameVal.length < 2 || nameVal.length > 100) {
         name.closest('.form-group').classList.add('error');
         valid = false;
       }
 
-      if (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+      if (!emailVal || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal) || emailVal.length > 200) {
         email.closest('.form-group').classList.add('error');
         valid = false;
       }
 
-      if (!message.value.trim()) {
+      if (!messageVal || messageVal.length < 10 || messageVal.length > 5000) {
         message.closest('.form-group').classList.add('error');
         valid = false;
       }
@@ -116,7 +163,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Jeśli valid - formularz wyśle się normalnie przez Formspree
+      // POPRAWKA: Aktualizuj rate limiting counter
+      formSubmitCount++;
+      lastSubmitTime = now;
+
+      // Formularz wysyła się przez Formspree
       setTimeout(() => {
         contactForm.style.display = 'none';
         formSuccess.classList.add('show');
@@ -130,6 +181,12 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
       document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      // Zapisz wybór języka w localStorage
+      try {
+        localStorage.setItem('pomelo_lang', btn.getAttribute('data-lang'));
+      } catch(err) {
+        // Cicho ignoruj jeśli localStorage niedostępny
+      }
     });
   });
 
@@ -139,37 +196,49 @@ document.addEventListener('DOMContentLoaded', () => {
   const COOKIE_EXPIRY_DAYS = 365;
 
   function getCookieConsent() {
-    const match = document.cookie.match(new RegExp('(^| )' + COOKIE_NAME + '=([^;]+)'));
-    if (match) {
-      try {
+    try {
+      const match = document.cookie.match(new RegExp('(^| )' + COOKIE_NAME + '=([^;]+)'));
+      if (match) {
         return JSON.parse(decodeURIComponent(match[2]));
-      } catch (e) {
-        return null;
       }
+    } catch (e) {
+      // Błąd parsowania - ignoruj
     }
     return null;
   }
 
+  // POPRAWKA: Dodano Secure flag i SameSite=Strict
   function setCookieConsent(analytics) {
     const value = JSON.stringify({ necessary: true, analytics: analytics });
     const date = new Date();
     date.setTime(date.getTime() + COOKIE_EXPIRY_DAYS * 24 * 60 * 60 * 1000);
-    document.cookie = COOKIE_NAME + '=' + encodeURIComponent(value) + ';expires=' + date.toUTCString() + ';path=/;SameSite=Lax';
+    // Secure flag działa tylko na HTTPS (Vercel = zawsze HTTPS) ✓
+    document.cookie = COOKIE_NAME + '=' + encodeURIComponent(value)
+      + ';expires=' + date.toUTCString()
+      + ';path=/'
+      + ';SameSite=Strict'  // POPRAWKA: Strict zamiast Lax - lepsze bezpieczeństwo
+      + ';Secure';          // POPRAWKA: Secure flag - tylko przez HTTPS
   }
 
   function initGA4() {
     if (window._ga4Loaded) return;
     window._ga4Loaded = true;
-    // Replace G-XXXXXXXX with your actual GA4 Measurement ID
+    // UWAGA: Zastąp G-XXXXXXXX swoim prawdziwym GA4 Measurement ID!
+    var GA4_ID = 'G-XXXXXXXX'; // <-- ZMIEŃ TO NA SWÓJ ID
     var script = document.createElement('script');
     script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX';
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
     document.head.appendChild(script);
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     window.gtag = gtag;
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXX');
+    // POPRAWKA: Anonimizacja IP + brak reklam
+    gtag('config', GA4_ID, {
+      'anonymize_ip': true,        // Anonimizacja IP zgodnie z RODO
+      'allow_google_signals': false, // Brak śledzenia reklamowego
+      'allow_ad_personalization_signals': false
+    });
   }
 
   function showCookieBanner() {
@@ -204,36 +273,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // Check existing consent – load GA4 if previously accepted
+  // POPRAWKA: Banner pokazuje się TYLKO gdy nie ma zapisanej zgody
   var consent = getCookieConsent();
   if (consent && consent.analytics === true) {
     initGA4();
+    // Nie pokazuj bannera - użytkownik już wyraził zgodę
+  } else if (consent === null) {
+    // Brak zgody - pokaż banner (pierwsza wizyta lub zgoda wygasła)
+    showCookieBanner();
   }
-  // Always show banner on page load
-  showCookieBanner();
+  // Jeśli consent istnieje ale analytics=false - baner też ukryty (użytkownik odrzucił)
 
   // Banner buttons
   var btnAcceptAll = document.getElementById('cookieAcceptAll');
   var btnReject = document.getElementById('cookieReject');
   var btnSettings = document.getElementById('cookieSettings');
 
-  if (btnAcceptAll) {
-    btnAcceptAll.addEventListener('click', function() {
-      saveCookieConsent(true);
-    });
-  }
-
-  if (btnReject) {
-    btnReject.addEventListener('click', function() {
-      saveCookieConsent(false);
-    });
-  }
-
-  if (btnSettings) {
-    btnSettings.addEventListener('click', function() {
-      showCookieSettings();
-    });
-  }
+  if (btnAcceptAll) btnAcceptAll.addEventListener('click', function() { saveCookieConsent(true); });
+  if (btnReject) btnReject.addEventListener('click', function() { saveCookieConsent(false); });
+  if (btnSettings) btnSettings.addEventListener('click', function() { showCookieSettings(); });
 
   // Modal buttons
   var btnModalSave = document.getElementById('cookieModalSave');
@@ -264,12 +322,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // POPRAWKA: Escape key zamyka modal
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      hideCookieSettings();
+    }
+  });
+
   // Footer "Zarządzaj cookies" link
   var manageCookiesLink = document.getElementById('manage-cookies');
   if (manageCookiesLink) {
     manageCookiesLink.addEventListener('click', function(e) {
       e.preventDefault();
-      // Pre-fill modal toggle based on current consent
       var currentConsent = getCookieConsent();
       if (analyticsToggle && currentConsent) {
         analyticsToggle.checked = currentConsent.analytics;
