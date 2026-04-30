@@ -2307,3 +2307,7 @@ ul { list-style: none; }
   .privacy-content p,
   .privacy-content li { font-size: 15px; }
 }
+
+/* Language switcher */
+[data-lang] { cursor: pointer; opacity: 0.5; }
+[data-lang].lang-active { opacity: 1; font-weight: bold; }
