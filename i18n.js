@@ -9,6 +9,7 @@ async function loadTranslations(lang) {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     cache[lang] = data;
+    console.log('i18n: JSON loaded, keys =', Object.keys(data).length);
     return data;
   } catch (err) {
     console.warn(`[i18n] Could not load /lang/${lang}.json`, err);
@@ -17,6 +18,7 @@ async function loadTranslations(lang) {
 }
 
 function applyTranslations(translations) {
+  console.log('i18n: applyTranslations called');
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (translations[key]) el.innerHTML = translations[key];
@@ -46,12 +48,20 @@ async function setLanguage(lang) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+async function initI18n() {
   const lang = localStorage.getItem('pomelo_lang')
     || (navigator.language.startsWith('pl') ? 'pl' : 'en');
-  setLanguage(lang);
+  console.log('i18n: DOMContentLoaded, lang =', lang);
 
   document.querySelectorAll('[data-lang]').forEach(btn => {
     btn.addEventListener('click', () => setLanguage(btn.getAttribute('data-lang')));
   });
-});
+
+  await setLanguage(lang);
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initI18n);
+} else {
+  initI18n();
+}
