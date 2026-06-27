@@ -2322,3 +2322,15 @@ ul { list-style: none; }
 .package-bullets { list-style: none; padding: 0; margin: 0.5rem 0 0.75rem; text-align: left; }
 .package-bullets li { position: relative; padding-left: 1.4rem; margin-bottom: 0.4rem; line-height: 1.4; font-size: 0.95em; }
 .package-bullets li::before { content: "✓"; position: absolute; left: 0; color: #7814A0; font-weight: 700; }
+
+/* FAQ section */
+.faq-section { padding: 4rem 1rem; }
+.faq-section .container { max-width: 760px; margin: 0 auto; }
+.faq-list details { border: 1px solid #E0D0EA; border-radius: 12px; margin-bottom: 10px; background: #fff; overflow: hidden; }
+.faq-list details[open] { border-color: #C8148C; }
+.faq-list summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 18px; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1rem; color: #1A1A2E; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: ""; width: 9px; height: 9px; border-right: 2px solid #C8148C; border-bottom: 2px solid #C8148C; transform: rotate(45deg); flex-shrink: 0; transition: transform .2s; margin-top: -4px; }
+.faq-list details[open] summary::after { transform: rotate(-135deg); margin-top: 2px; }
+.faq-list details[open] summary { color: #7814A0; background: #F3E8F9; }
+.faq-list .faq-answer { padding: 4px 18px 18px; font-family: 'Inter', sans-serif; font-size: 0.95rem; line-height: 1.6; color: #4A4A6A; }
