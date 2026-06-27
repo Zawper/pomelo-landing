@@ -2311,3 +2311,14 @@ ul { list-style: none; }
 /* Language switcher */
 [data-lang] { cursor: pointer; opacity: 0.5; }
 [data-lang].lang-active { opacity: 1; font-weight: bold; }
+
+/* Report card — bullet list */
+.report-list-title { font-weight: 600; color: #7814A0; margin: 0.75rem 0 0.4rem; text-align: left; }
+.report-list { list-style: none; padding: 0; margin: 0 0 0.75rem; text-align: left; }
+.report-list li { position: relative; padding-left: 1.4rem; margin-bottom: 0.5rem; line-height: 1.4; }
+.report-list li::before { content: "✓"; position: absolute; left: 0; color: #C8148C; font-weight: 700; }
+
+/* Package card — bullet list */
+.package-bullets { list-style: none; padding: 0; margin: 0.5rem 0 0.75rem; text-align: left; }
+.package-bullets li { position: relative; padding-left: 1.4rem; margin-bottom: 0.4rem; line-height: 1.4; font-size: 0.95em; }
+.package-bullets li::before { content: "✓"; position: absolute; left: 0; color: #7814A0; font-weight: 700; }
